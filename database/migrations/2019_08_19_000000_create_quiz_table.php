@@ -15,12 +15,11 @@ class CreateFailedJobsTable extends Migration
     {
         Schema::create('quiz', function (Blueprint $table) {
             $table->id();
-            $table->int('author');
-            $table->string('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->integer('author');
+            $table->text('name');
+            $table->string('file');
+            $table->text('hint');
+            $table->timestamp('time');
         });
     }
 

@@ -14,9 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('mess', function (Blueprint $table) {
-            $table->string('id')->index();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            $table->id('id');
+            $table->text('content');
+            $table->integer('sender');
+            $table->integer('receiver');
+            $table->timestamp('time');
         });
     }
 
