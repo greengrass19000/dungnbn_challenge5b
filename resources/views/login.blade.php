@@ -9,11 +9,11 @@
 </head>
 
 <body>
-    <!-- <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
+    <div class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary">
         <div class="text-white mb-3 mb-md-0">
             Loginpage
         </div>
-    </div> -->
+    </div>
     <br>
     <br>
     <section class="vh-100">
@@ -49,27 +49,6 @@
                 </div>
             </div>
         </div>
-        <?php
-        // require 'db.php';
-        if (isset($_POST['log'])) {
-            mysqli_set_charset($conn, 'UTF8');
-            include_once('db.php');
-            $sql = "SELECT id, role FROM acc WHERE un='{$_POST['u']}' AND pw='{$_POST['p']}'";
-            $result = $conn->query($sql);
-
-            if ($result->num_rows > 0) {
-                $row = $result->fetch_assoc();
-                session_start();
-                $_SESSION['u'] = $_POST['u'];
-                $_SESSION['role'] = $row['role'];
-                $_SESSION['id'] = $row['id'];
-                header("location:index.php");
-            } else {
-                echo "not suitable input";
-            }
-            $conn->close();
-        }
-        ?>
         <br>
         <br>
         <br>
