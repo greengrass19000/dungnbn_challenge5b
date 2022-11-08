@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use ConfirmsPasswords;
 
 class LoginController extends Controller
@@ -22,12 +23,20 @@ class LoginController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
+    public function index() {
         return view('login');
     }
-    public function log()
-    {
-        
+    public function log(Request $request) {
+        $credentials = $request->validate([
+            'u' => ['required'],
+            'p' => ['required'],
+        ]);
+        if (!Auth::attempt($credentials)) {
+            return back()->withErrors([
+                'error' => 'Username hoặc Password không đúng',
+            ]);
+        }
+        $request->session()->regenerate();
+        return redirect()->route('home');
     }
 }
