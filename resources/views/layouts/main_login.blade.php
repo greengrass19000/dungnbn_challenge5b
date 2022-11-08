@@ -9,7 +9,7 @@
     <script src="{{ asset('/js/app.js') }}"></script>
 </head>
 
-<body>
+<body class="mb-60">
     @include('layouts.header')
     <br>
     <br>
