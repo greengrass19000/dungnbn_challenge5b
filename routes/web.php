@@ -26,5 +26,5 @@ Route::get('/login', function () {
 // Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('index');
 
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/login', [App\Http\Controllers\LoginController::class, 'log'])->name('login');
