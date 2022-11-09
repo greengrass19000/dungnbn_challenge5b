@@ -26,7 +26,12 @@ class LoginController extends Controller
     public function index() {
         return view('login');
     }
-    public function log(Request $request) {
+    
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function login(Request $request) {
         $credentials = $request->validate([
             'u' => ['required'],
             'p' => ['required'],
@@ -37,6 +42,6 @@ class LoginController extends Controller
             ]);
         }
         $request->session()->regenerate();
-        return redirect()->route('welcome');
+        return redirect()->route('home');
     }
 }

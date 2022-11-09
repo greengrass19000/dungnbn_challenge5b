@@ -7,17 +7,17 @@
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form action="{{ route('login') }}" method="post">
+                    <form action="{{ route('login') }}" method="post" role="form">
                     @csrf
                     @method('POST')
                         <div class="form-outline mb-4">
                             <label class="form-label" for="form3Example3">Tài khoản</label>
-                            <input type="text" name="u" class="form-control form-control-lg" placeholder="Username" />
+                            <input type="text" name="user" class="form-control form-control-lg" placeholder="Username" autofocus=""/>
                         </div>
 
                         <div class="form-outline mb-3">
                             <label class="form-label" for="form3Example4">Mật khẩu</label>
-                            <input type="password" name="p" class="form-control form-control-lg" placeholder="*******" />
+                            <input type="password" name="password" class="form-control form-control-lg" placeholder="*******" />
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center">
@@ -30,7 +30,7 @@
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="submit" name="log" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <button type="submit" name="login" class="btn btn-primary btn-lg" style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
                         </div>
 
                     </form>
